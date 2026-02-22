@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mais Software | Inovação</title>
+    <title>Mais Software</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -57,6 +57,22 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .sub-tile-1 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #555;
+            letter-spacing: 4px;
+            margin-top: 10px;
+        }
+
+        .sub-tile-2 {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #555;
+            letter-spacing: 4px;
+            margin-top: 10px;
+        }
+
         p {
             font-size: 1rem;
             font-weight: 300;
@@ -64,14 +80,38 @@
             letter-spacing: 4px;
             margin-top: 10px;
         }
+
+        /* Ajustes para dispositivos móveis */
+        @media (max-width: 768px) {
+            h1 svg {
+                width: 35px !important;  /* Diminui o tamanho do ícone */
+                height: 35px !important;
+                top: -9px !important;    /* Ajusta a posição superior */
+                right: -21px !important; /* Ajusta a posição lateral */
+            }
+            
+            .sub-tile-1, .sub-tile-2 {
+                letter-spacing: 2px;     /* Reduz o espaçamento para caber no ecrã */
+                font-size: 1rem;
+            }
+        }
+
     </style>
 </head>
 <body>
     <div class="glow-bg" id="glow"></div>
     
     <div class="container">
-        <h1>Mais Software</h1>
-        <p>EM CONSTRUÇÃO</p>
+        <h1 style="position: relative; display: inline-block;">
+            Mais Software
+            <svg width="60" height="60" viewBox="0 0 100 100" 
+                 style="position: absolute; top: -15px; right: -32px; opacity: 0.9; z-index: 1;">
+                <rect x="38" y="10" width="24" height="80" rx="4" fill="#F39200"/>
+                <rect x="10" y="38" width="80" height="24" rx="4" fill="#F39200"/>
+            </svg>
+        </h1>
+        <div class="sub-tile-1">Onde o código encontra a inovação</div>
+        <div class="sub-tile-2">Desenvolvimento sob medida para negócios em expansão</div>
     </div>
 
     <script>
