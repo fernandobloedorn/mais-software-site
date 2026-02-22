@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Software | Inovação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+        }
+
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* O segredo: Gradiente radial que segue as variáveis do mouse */
+        .glow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Garante que não bloqueie cliques */
+            background: radial-gradient(
+                circle at var(--mouse-x) var(--mouse-y), 
+                rgba(0, 123, 255, 0.15) 0%, 
+                rgba(5, 5, 5, 1) 40%
+            );
+            z-index: 0;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin: 0;
+            background: linear-gradient(180deg, #fff 0%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #555;
+            letter-spacing: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-bg" id="glow"></div>
+    
+    <div class="container">
+        <h1>Mais Software</h1>
+        <p>EM CONSTRUÇÃO</p>
+    </div>
+
+    <script>
+        // JavaScript para capturar o movimento do mouse e atualizar as variáveis CSS
+        const glow = document.getElementById('glow');
+        
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            
+            document.documentElement.style.setProperty('--mouse-x', `${x}%`);
+            document.documentElement.style.setProperty('--mouse-y', `${y}%`);
+        });
+    </script>
+</body>
+</html>
