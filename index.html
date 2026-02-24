@@ -11,6 +11,7 @@
         :root {
             --mouse-x: 50%;
             --mouse-y: 50%;
+            --accent-color: #F39200;
         }
 
         body {
@@ -70,7 +71,7 @@
             font-weight: 300;
             color: #555;
             letter-spacing: 4px;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         p {
@@ -79,6 +80,56 @@
             color: #555;
             letter-spacing: 4px;
             margin-top: 10px;
+        }
+
+        /* Estilização do Formulário */
+        .contact-form {
+            margin-top: 40px;
+            margin-left: 10px;
+            margin-right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .contact-form:hover {
+            opacity: 1;
+        }
+
+        .contact-form input, .contact-form textarea {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 12px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--accent-color);
+        }
+
+        .contact-form button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
         }
 
         /* Ajustes para dispositivos móveis */
@@ -112,6 +163,14 @@
         </h1>
         <div class="sub-tile-1">Onde o código encontra a inovação</div>
         <div class="sub-tile-2">Desenvolvimento sob medida para negócios em expansão</div>
+
+        <form class="contact-form" action="https://formspree.io/f/mzdayzgp" method="POST">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <textarea name="mensagem" rows="4" placeholder="Como a Mais Software pode ajudar o seu negócio?" required></textarea>
+            <button type="submit">Solicitar Consultoria</button>
+        </form>
+
     </div>
 
     <script>
