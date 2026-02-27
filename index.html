@@ -25,6 +25,8 @@
             margin: 0;
             overflow: hidden;
             position: relative;
+            flex-direction: column; 
+            overflow-y: auto;
         }
 
         /* O segredo: Gradiente radial que segue as variáveis do mouse */
@@ -147,6 +149,32 @@
             }
         }
 
+        .main-footer {
+            width: 100%;
+            padding: 20px 0;
+            /* background-color: rgba(5, 5, 5, 0.8); Fundo escuro levemente transparente */
+            /* border-top: 1px solid rgba(243, 146, 0, 0.2); Linha sutil com a cor accent */
+            /* color: #888; */
+            font-size: 0.85rem;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+        }
+
+        .footer-content strong {
+            color: var(--accent-color); /* Usa o laranja #F39200 definido no seu :root */
+        }
+
+        /* Ajuste para mobile */
+        @media (max-width: 767px) {
+            .main-footer {
+                position: relative; /* No mobile, evita sobrepor o formulário se a tela for pequena */
+                margin-top: 40px;
+                padding-top: 0; /* Aplicando a dica anterior de zerar padding no mobile */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -172,6 +200,14 @@
         </form>
 
     </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <strong>Mais Software Tecnologia LTDA</strong><br>
+            Nova Petrópolis - RS - Brazil<br>
+            Rua Frederico A. C. Luedke, 121 - Pousada da Neve
+        </div>
+    </footer>
 
     <script>
         // JavaScript para capturar o movimento do mouse e atualizar as variáveis CSS
